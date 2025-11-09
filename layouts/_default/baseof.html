@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang | default "en" }}">
+<head>
+  {{- partial "head.html" . -}}
+</head>
+<body>
+  {{- /* Skip to main content link for screen readers and keyboard navigation */ -}}
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+  <div class="page-container">
+    {{- /* Sidebar with profile and navigation */ -}}
+    <aside class="sidebar" role="complementary" aria-label="Sidebar">
+      {{- partial "sidebar.html" . -}}
+    </aside>
+
+    {{- /* Main content area */ -}}
+    <main id="main-content" class="main-content" role="main">
+      {{- block "main" . }}{{- end }}
+
+      {{- /* Footer */ -}}
+      {{- partial "footer.html" . -}}
+    </main>
+  </div>
+</body>
+</html>

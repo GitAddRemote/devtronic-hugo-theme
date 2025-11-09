@@ -1,0 +1,164 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{{- /* Page Title */ -}}
+<title>
+  {{- if .IsHome -}}
+    {{ .Site.Title }}
+  {{- else -}}
+    {{ .Title }} | {{ .Site.Title }}
+  {{- end -}}
+</title>
+
+{{- /* Meta Description */ -}}
+{{- if .Description -}}
+  <meta name="description" content="{{ .Description }}">
+{{- else if .IsPage -}}
+  <meta name="description" content="{{ .Summary | plainify | truncate 160 }}">
+{{- else if .Site.Params.description -}}
+  <meta name="description" content="{{ .Site.Params.description }}">
+{{- end -}}
+
+{{- /* Author */ -}}
+{{- if .Site.Params.author -}}
+  <meta name="author" content="{{ .Site.Params.author }}">
+{{- end -}}
+
+{{- /* Keywords */ -}}
+{{- if .Keywords -}}
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+{{- else if .Site.Params.keywords -}}
+  <meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}">
+{{- end -}}
+
+{{- /* Canonical URL */ -}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{- /* RSS Feed */ -}}
+{{ with .OutputFormats.Get "rss" -}}
+  <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}">
+{{ end -}}
+
+{{- /* Open Graph Meta Tags */ -}}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+
+{{- if .Description -}}
+  <meta property="og:description" content="{{ .Description }}">
+{{- else if .IsPage -}}
+  <meta property="og:description" content="{{ .Summary | plainify | truncate 160 }}">
+{{- else if .Site.Params.description -}}
+  <meta property="og:description" content="{{ .Site.Params.description }}">
+{{- end -}}
+
+{{- /* Open Graph Image */ -}}
+{{- if .Params.image -}}
+  <meta property="og:image" content="{{ .Params.image | absURL }}">
+{{- else if .Site.Params.image -}}
+  <meta property="og:image" content="{{ .Site.Params.image | absURL }}">
+{{- end -}}
+
+{{- /* Article specific Open Graph */ -}}
+{{- if .IsPage -}}
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- if .Lastmod -}}
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  {{- end -}}
+  {{- with .Params.tags -}}
+    {{- range . -}}
+      <meta property="article:tag" content="{{ . }}">
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* Twitter Card Meta Tags */ -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
+{{- if .Description -}}
+  <meta name="twitter:description" content="{{ .Description }}">
+{{- else if .IsPage -}}
+  <meta name="twitter:description" content="{{ .Summary | plainify | truncate 160 }}">
+{{- else if .Site.Params.description -}}
+  <meta name="twitter:description" content="{{ .Site.Params.description }}">
+{{- end -}}
+
+{{- if .Params.image -}}
+  <meta name="twitter:image" content="{{ .Params.image | absURL }}">
+{{- else if .Site.Params.image -}}
+  <meta name="twitter:image" content="{{ .Site.Params.image | absURL }}">
+{{- end -}}
+
+{{- if .Site.Params.twitter -}}
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
+  <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+{{- end -}}
+
+{{- /* Favicon */ -}}
+{{- if .Site.Params.favicon -}}
+  <link rel="icon" type="image/png" href="{{ .Site.Params.favicon | absURL }}">
+{{- end -}}
+
+{{- /* CSS - Using Hugo's asset pipeline */ -}}
+{{- $css := resources.Get "css/main.css" -}}
+{{- if $css -}}
+  {{- if hugo.IsProduction -}}
+    {{- $css = $css | minify | fingerprint -}}
+  {{- end -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}"{{ if hugo.IsProduction }} integrity="{{ $css.Data.Integrity }}"{{ end }}>
+{{- end -}}
+
+{{- /* Syntax Highlighting - Chroma */ -}}
+{{- if .Site.Params.syntaxHighlight | default true -}}
+  <style>
+    /* Chroma highlighting styles - Emerald theme */
+    .chroma { background-color: #1e2328; color: #e8eaed; padding: 1.5rem; border-radius: 6px; }
+    .chroma .err { color: #ff6b6b; }
+    .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+    .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+    .chroma .hl { display: block; width: 100%; background-color: rgba(0, 255, 153, 0.1); }
+    .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #6c757d; }
+    .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em; color: #6c757d; }
+    .chroma .k { color: #00FF99; font-weight: 600; } /* Keywords */
+    .chroma .kc { color: #00FF99; font-weight: 600; } /* Keyword Constant */
+    .chroma .kd { color: #00FF99; font-weight: 600; } /* Keyword Declaration */
+    .chroma .kn { color: #00FF99; font-weight: 600; } /* Keyword Namespace */
+    .chroma .kp { color: #00FF99; } /* Keyword Pseudo */
+    .chroma .kr { color: #00FF99; font-weight: 600; } /* Keyword Reserved */
+    .chroma .kt { color: #0affc2; } /* Keyword Type */
+    .chroma .n { color: #e8eaed; } /* Name */
+    .chroma .na { color: #0affc2; } /* Name Attribute */
+    .chroma .nb { color: #ffd700; } /* Name Builtin */
+    .chroma .nc { color: #ffd700; } /* Name Class */
+    .chroma .nf { color: #ffd700; } /* Name Function */
+    .chroma .s { color: #a8e6cf; } /* String */
+    .chroma .s1 { color: #a8e6cf; } /* String Single */
+    .chroma .s2 { color: #a8e6cf; } /* String Double */
+    .chroma .sb { color: #a8e6cf; } /* String Backtick */
+    .chroma .se { color: #00cc7a; } /* String Escape */
+    .chroma .si { color: #00cc7a; } /* String Interpol */
+    .chroma .c { color: #9aa0a6; font-style: italic; } /* Comment */
+    .chroma .c1 { color: #9aa0a6; font-style: italic; } /* Comment Single */
+    .chroma .cm { color: #9aa0a6; font-style: italic; } /* Comment Multi */
+    .chroma .o { color: #00FF99; } /* Operator */
+    .chroma .p { color: #e8eaed; } /* Punctuation */
+    .chroma .m { color: #ffa07a; } /* Number */
+    .chroma .mf { color: #ffa07a; } /* Number Float */
+    .chroma .mi { color: #ffa07a; } /* Number Integer */
+  </style>
+{{- end -}}
+
+{{- /* Preconnect for performance */ -}}
+{{- range .Site.Params.preconnect -}}
+  <link rel="preconnect" href="{{ . }}" crossorigin>
+{{- end -}}
+
+{{- /* Additional head content from config or front matter */ -}}
+{{- if .Site.Params.customHead -}}
+  {{ .Site.Params.customHead | safeHTML }}
+{{- end -}}
+
+{{- /* Theme color for mobile browsers */ -}}
+<meta name="theme-color" content="#2d3238">

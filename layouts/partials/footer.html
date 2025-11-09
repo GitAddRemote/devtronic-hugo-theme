@@ -1,0 +1,19 @@
+<footer class="site-footer" role="contentinfo">
+  <p>
+    &copy; {{ now.Year }} {{ .Site.Params.author | default .Site.Title }}.
+    {{- if .Site.Params.license -}}
+      {{- " " -}}Content licensed under
+      {{- if .Site.Params.licenseURL -}}
+        <a href="{{ .Site.Params.licenseURL }}" target="_blank" rel="noopener noreferrer">{{ .Site.Params.license }}</a>.
+      {{- else -}}
+        {{ .Site.Params.license }}.
+      {{- end -}}
+    {{- end -}}
+  </p>
+  <p>
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreferrer">Hugo</a>
+    {{- if .Site.Params.showThemeAttribution | default true -}}
+      {{- " " -}}with <a href="https://github.com/gitaddremote/devtronic-hugo-theme" target="_blank" rel="noopener noreferrer">Devtronic</a> theme
+    {{- end -}}
+  </p>
+</footer>
