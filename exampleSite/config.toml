@@ -1,0 +1,16 @@
+[params]
+# Branding
+theme = "devtronic"
+titleGlow = true
+accentColor = "#00FF99"
+subtitle = "A Digital Mindspace for Developers"
+
+# Layout
+showAuthor = true
+showReadingTime = true
+enableComments = false
+
+# Social Links
+github = "https://github.com/yourusername"
+twitter = "https://twitter.com/yourhandle"
+linkedin = "https://linkedin.com/in/yourprofile"
