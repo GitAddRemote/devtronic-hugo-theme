@@ -1,16 +1,93 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "Devtronic Theme Demo"
+theme = "devtronic-hugo-theme"
+
+# Enable emoji support
+enableEmoji = true
+
+# Number of posts per page
+paginate = 10
+
+# Main sections for homepage
 [params]
-# Branding
-theme = "devtronic"
-titleGlow = true
-accentColor = "#00FF99"
-subtitle = "A Digital Mindspace for Developers"
+  # Site metadata
+  description = "A developer-centric blog with emerald accents and clean typography"
+  keywords = ["development", "programming", "technology", "blog"]
+  author = "Your Name"
 
-# Layout
-showAuthor = true
-showReadingTime = true
-enableComments = false
+  # Profile settings (for sidebar)
+  avatar = "/images/avatar.png"  # Path to your avatar image
+  title = "Developer & Tech Enthusiast"
+  bio = "Building elegant solutions to complex problems. Passionate about clean code and minimal design."
 
-# Social Links
-github = "https://github.com/yourusername"
-twitter = "https://twitter.com/yourhandle"
-linkedin = "https://linkedin.com/in/yourprofile"
+  # Social links (just the username/handle, not full URL)
+  github = "yourusername"
+  twitter = "yourhandle"
+  linkedin = "yourprofile"
+  email = "you@example.com"
+
+  # Homepage
+  homeIntro = "Welcome to **Devtronic** — a minimal, developer-focused theme with Matrix-inspired aesthetics."
+
+  # Main sections to display on homepage
+  mainSections = ["posts", "blog"]
+
+  # Features
+  syntaxHighlight = true
+  showReadingTime = true
+  showThemeAttribution = true
+
+  # Footer
+  license = "CC BY-SA 4.0"
+  licenseURL = "https://creativecommons.org/licenses/by-sa/4.0/"
+
+# Syntax highlighting (Chroma)
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = true
+    lineNumbersInTable = true
+    tabWidth = 2
+
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # Allow HTML in markdown
+
+# Menu configuration
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Posts"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  weight = 3
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 4
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# Output formats
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+# Privacy settings
+[privacy]
+  [privacy.disqus]
+    disable = true
+  [privacy.googleAnalytics]
+    disable = true
