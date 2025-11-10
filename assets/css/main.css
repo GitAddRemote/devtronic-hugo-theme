@@ -92,6 +92,29 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   min-height: 100vh;
+  position: relative;
+}
+
+/* ============================================
+   MODERN ENHANCEMENT: Subtle CRT Scanlines
+   ============================================ */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
 }
 
 /* ============================================
@@ -141,14 +164,20 @@ body {
   min-height: 100vh;
 }
 
+/* ============================================
+   MODERN ENHANCEMENT: Glassmorphism Sidebar
+   ============================================ */
 .sidebar {
-  background: var(--bg-sidebar);
+  background: rgba(42, 47, 54, 0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: var(--space-2xl) var(--space-xl);
   position: sticky;
   top: 0;
   height: 100vh;
   overflow-y: auto;
-  border-right: 1px solid var(--border-color);
+  border-right: 1px solid rgba(0, 255, 153, 0.2);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.3);
 }
 
 .main-content {
@@ -179,15 +208,28 @@ h6:first-child {
   margin-top: 0;
 }
 
+/* ============================================
+   MODERN ENHANCEMENT: Gradient Text Headings
+   ============================================ */
+h1, h2 {
+  background: linear-gradient(
+    135deg,
+    var(--text-primary) 0%,
+    var(--accent-glow) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+}
+
 h1 {
   font-size: 2.5rem;
-  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 h2 {
   font-size: 2rem;
-  font-weight: 600;
 }
 
 h3 {
@@ -256,15 +298,28 @@ code {
   font-weight: 500;
 }
 
-/* Code blocks */
+/* ============================================
+   MODERN ENHANCEMENT: Enhanced Code Blocks
+   ============================================ */
 pre {
-  background: var(--bg-code-block);
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    #1a1f24 0%,
+    #1e2328 100%
+  );
   padding: var(--space-lg);
-  border-radius: 6px;
+  border-radius: 8px;
   overflow-x: auto;
-  border: 1px solid var(--border-color);
+  border-left: 3px solid var(--accent-primary);
   margin: 1.5em 0;
   line-height: 1.5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+pre:hover {
+  box-shadow: 0 4px 20px rgba(0, 255, 153, 0.15);
 }
 
 pre code {
@@ -283,15 +338,41 @@ pre code {
   margin-bottom: var(--space-2xl);
 }
 
+/* ============================================
+   MODERN ENHANCEMENT: Animated Pulsing Avatar Glow
+   ============================================ */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 255, 153, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(0, 255, 153, 0.7);
+  }
+}
+
 .profile-avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   border: 3px solid var(--accent-primary);
-  box-shadow: var(--glow-emerald);
   margin: 0 auto var(--space-md);
   display: block;
-  transition: box-shadow var(--transition-base);
+  animation: pulse-glow 3s ease-in-out infinite;
+  position: relative;
+}
+
+.profile-avatar::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(0, 255, 153, 0.3) 0%,
+    transparent 70%
+  );
+  z-index: -1;
+  filter: blur(10px);
 }
 
 .profile-avatar:hover {
@@ -459,14 +540,49 @@ article header {
   padding: 0;
 }
 
+/* ============================================
+   MODERN ENHANCEMENT: Card-Based Post Design
+   ============================================ */
 .post-list-item {
+  background: rgba(45, 50, 56, 0.6);
+  border: 1px solid rgba(0, 255, 153, 0.15);
+  border-radius: 12px;
+  padding: 2rem;
   margin-bottom: var(--space-2xl);
-  padding-bottom: var(--space-2xl);
-  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.post-list-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--accent-primary),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.post-list-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 32px rgba(0, 255, 153, 0.2);
+  background: rgba(45, 50, 56, 0.8);
+}
+
+.post-list-item:hover::before {
+  opacity: 1;
 }
 
 .post-list-item:last-child {
-  border-bottom: none;
+  margin-bottom: var(--space-2xl);
 }
 
 .post-list-title {
@@ -581,28 +697,53 @@ tbody tr:hover {
 }
 
 /* ============================================
-   Buttons & Interactive Elements
+   MODERN ENHANCEMENT: Gradient Buttons with Shine
    ============================================ */
 .btn {
   display: inline-flex;
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-lg);
-  background: var(--accent-primary);
+  background: linear-gradient(135deg,
+    var(--accent-primary) 0%,
+    var(--accent-glow) 100%
+  );
   color: var(--text-inverse);
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-weight: 600;
   font-size: 0.9375rem;
   cursor: pointer;
   transition: all var(--transition-base);
   text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0, 255, 153, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
 }
 
 .btn:hover {
-  background: var(--accent-glow);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 20px rgba(0, 255, 153, 0.4);
   text-decoration: none;
   color: var(--text-inverse);
 }
@@ -745,6 +886,30 @@ tbody tr:hover {
     color: black;
     text-decoration: underline;
   }
+}
+
+/* ============================================
+   MODERN ENHANCEMENT: Custom Matrix Scrollbar
+   ============================================ */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    var(--accent-dim),
+    var(--accent-primary)
+  );
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-glow);
 }
 
 /* ============================================
