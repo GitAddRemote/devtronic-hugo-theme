@@ -26,6 +26,11 @@ paginate = 10
   twitter = "yourhandle"
   linkedin = "yourprofile"
   email = "you@example.com"
+  youtube = "yourchannel"
+  mastodon = "https://mastodon.social/@yourhandle"  # Full URL for Mastodon
+  medium = "yourhandle"
+  devto = "yourhandle"
+  bluesky = "yourhandle.bsky.social"
 
   # Homepage
   homeIntro = "Welcome to **Devtronic** — a minimal, developer-focused theme with Matrix-inspired aesthetics."
