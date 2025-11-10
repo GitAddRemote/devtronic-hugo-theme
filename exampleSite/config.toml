@@ -79,6 +79,10 @@ paginate = 10
   # Main sections to display on homepage
   mainSections = ["posts", "blog"]
 
+  # Pagination settings
+  homePostsPerPage = 5        # Number of posts on homepage
+  archivePostsPerPage = 15    # Number of posts on archive/list pages
+
   # Features
   syntaxHighlight = true
   showReadingTime = true

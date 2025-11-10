@@ -9,7 +9,8 @@
 {{- /* Recent Posts Section */ -}}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
 {{- if $pages -}}
-  {{- $paginator := .Paginate $pages 5 -}}
+  {{- $postsPerPage := default 5 .Site.Params.homePostsPerPage -}}
+  {{- $paginator := .Paginate $pages $postsPerPage -}}
   <section>
     <h2>Recent Posts</h2>
     <ul class="post-list">
