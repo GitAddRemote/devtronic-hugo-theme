@@ -9,10 +9,11 @@
 {{- /* Recent Posts Section */ -}}
 {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections -}}
 {{- if $pages -}}
+  {{- $paginator := .Paginate $pages 5 -}}
   <section>
     <h2>Recent Posts</h2>
     <ul class="post-list">
-      {{- range first 10 $pages -}}
+      {{- range $paginator.Pages -}}
         <li class="post-list-item">
           <h3 class="post-list-title">
             <a href="{{ .Permalink }}">{{ .Title }}</a>
@@ -59,10 +60,41 @@
       {{- end -}}
     </ul>
 
-    {{- if gt (len $pages) 10 -}}
-      <div style="text-align: center; margin-top: 3rem;">
-        <a href="/posts/" class="btn">View All Posts</a>
-      </div>
+    {{- /* Pagination */ -}}
+    {{- if gt $paginator.TotalPages 1 -}}
+      <nav class="pagination" role="navigation" aria-label="Pagination">
+        <ul>
+          {{- if $paginator.HasPrev -}}
+            <li>
+              <a href="{{ $paginator.Prev.URL }}" rel="prev" aria-label="Previous page">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </a>
+            </li>
+          {{- end -}}
+
+          {{- range $paginator.Pagers -}}
+            <li>
+              {{- if eq . $paginator -}}
+                <span class="active" aria-current="page">{{ .PageNumber }}</span>
+              {{- else -}}
+                <a href="{{ .URL }}" aria-label="Page {{ .PageNumber }}">{{ .PageNumber }}</a>
+              {{- end -}}
+            </li>
+          {{- end -}}
+
+          {{- if $paginator.HasNext -}}
+            <li>
+              <a href="{{ $paginator.Next.URL }}" rel="next" aria-label="Next page">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </a>
+            </li>
+          {{- end -}}
+        </ul>
+      </nav>
     {{- end -}}
   </section>
 {{- else -}}
