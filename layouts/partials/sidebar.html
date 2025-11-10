@@ -21,7 +21,7 @@
   {{- end -}}
 
   {{- /* Social Links */ -}}
-  {{- if or .Site.Params.github .Site.Params.twitter .Site.Params.linkedin .Site.Params.email .Site.Params.youtube .Site.Params.mastodon .Site.Params.medium .Site.Params.devto .Site.Params.bluesky -}}
+  {{- if or .Site.Params.github .Site.Params.twitter .Site.Params.linkedin .Site.Params.email .Site.Params.youtube .Site.Params.mastodon .Site.Params.medium .Site.Params.devto .Site.Params.bluesky .Site.Params.tiktok .Site.Params.instagram .Site.Params.facebook .Site.Params.reddit .Site.Params.twitch .Site.Params.stackoverflow .Site.Params.codepen -}}
     <div class="social-links" role="navigation" aria-label="Social media links">
       {{- if .Site.Params.github -}}
         <a href="https://github.com/{{ .Site.Params.github }}"
@@ -134,6 +134,104 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M12 3c-1.5 3-4 6-7 7 3 1 5.5 4 7 8 1.5-4 4-7 7-8-3-1-5.5-4-7-7z"></path>
             <circle cx="12" cy="18" r="2"></circle>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.tiktok -}}
+        <a href="https://tiktok.com/@{{ .Site.Params.tiktok }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="TikTok Profile"
+           title="TikTok">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.instagram -}}
+        <a href="https://instagram.com/{{ .Site.Params.instagram }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Instagram Profile"
+           title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.facebook -}}
+        <a href="https://facebook.com/{{ .Site.Params.facebook }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Facebook Profile"
+           title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.reddit -}}
+        <a href="https://reddit.com/user/{{ .Site.Params.reddit }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Reddit Profile"
+           title="Reddit">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <circle cx="9" cy="10" r="1"></circle>
+            <circle cx="15" cy="10" r="1"></circle>
+            <path d="M9 15c.5.5 1.5 1 3 1s2.5-.5 3-1"></path>
+            <path d="M17 11.5c1.5 0 2.5 1 2.5 2.5s-1 2.5-2.5 2.5"></path>
+            <path d="M7 11.5C5.5 11.5 4.5 12.5 4.5 14s1 2.5 2.5 2.5"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.twitch -}}
+        <a href="https://twitch.tv/{{ .Site.Params.twitch }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Twitch Channel"
+           title="Twitch">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-10 9V7m5 4V7"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.stackoverflow -}}
+        <a href="https://stackoverflow.com/users/{{ .Site.Params.stackoverflow }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Stack Overflow Profile"
+           title="Stack Overflow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="16" width="12" height="2"></rect>
+            <rect x="4" y="12" width="12" height="2" transform="rotate(-5 10 13)"></rect>
+            <rect x="4" y="8" width="12" height="2" transform="rotate(-10 10 9)"></rect>
+            <path d="M18 20V10h2v12H2V10h2v10"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.codepen -}}
+        <a href="https://codepen.io/{{ .Site.Params.codepen }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="CodePen Profile"
+           title="CodePen">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+            <line x1="12" y1="22" x2="12" y2="15.5"></line>
+            <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+            <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
+            <line x1="12" y1="2" x2="12" y2="8.5"></line>
           </svg>
         </a>
       {{- end -}}

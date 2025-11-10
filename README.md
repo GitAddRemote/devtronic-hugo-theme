@@ -35,5 +35,41 @@ From your Hugo site directory:
 ```bash
 cd themes
 git clone https://github.com/yourusername/devtronic-hugo-theme.git devtronic
-
 ```
+
+---
+
+## ⚙️ Configuration
+
+### Social Links
+
+The theme supports a wide range of social media platforms. Add any of the following to your `config.toml` under `[params]`:
+
+```toml
+[params]
+  # Social links (just the username/handle, not full URL)
+  github = "yourusername"
+  twitter = "yourhandle"
+  linkedin = "yourprofile"
+  email = "you@example.com"
+  youtube = "yourchannel"
+  mastodon = "https://mastodon.social/@yourhandle"  # Full URL for Mastodon
+  medium = "yourhandle"
+  devto = "yourhandle"
+  bluesky = "yourhandle.bsky.social"
+  tiktok = "yourhandle"
+  instagram = "yourhandle"
+  facebook = "yourhandle"
+  reddit = "yourusername"
+  twitch = "yourchannel"
+  stackoverflow = "12345678"  # Your user ID number
+  codepen = "yourhandle"
+```
+
+**Supported platforms:**
+- GitHub, Twitter/X, LinkedIn, Email
+- YouTube, Mastodon, Medium, Dev.to, Bluesky
+- TikTok, Instagram, Facebook, Reddit
+- Twitch, Stack Overflow, CodePen
+
+Icons will automatically appear in the sidebar for any configured social links.
