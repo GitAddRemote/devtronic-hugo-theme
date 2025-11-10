@@ -21,11 +21,57 @@ paginate = 10
   title = "Developer & Tech Enthusiast"
   bio = "Building elegant solutions to complex problems. Passionate about clean code and minimal design."
 
-  # Social links (just the username/handle, not full URL)
+  # Social links (just the username/handle, not full URL unless noted)
+  # Core platforms
   github = "yourusername"
   twitter = "yourhandle"
   linkedin = "yourprofile"
   email = "you@example.com"
+
+  # Content platforms
+  youtube = "yourchannel"
+  medium = "yourhandle"
+  devto = "yourhandle"
+  tiktok = "yourhandle"
+  twitch = "yourchannel"
+
+  # Social media
+  mastodon = "https://mastodon.social/@yourhandle"  # Full URL for Mastodon
+  bluesky = "yourhandle.bsky.social"
+  instagram = "yourhandle"
+  facebook = "yourhandle"
+  threads = "yourhandle"
+  snapchat = "yourhandle"
+
+  # Communities
+  reddit = "yourusername"
+  discord = "https://discord.gg/yourinvite"  # Full invite URL
+  telegram = "yourhandle"
+  whatsapp = "1234567890"  # Phone number with country code, no + or spaces
+  matrix = "https://matrix.to/#/@user:server.org"  # Full Matrix URL
+
+  # Developer platforms
+  gitlab = "yourusername"
+  bitbucket = "yourusername"
+  stackoverflow = "12345678"  # Your user ID number
+  codepen = "yourhandle"
+
+  # Design portfolios
+  dribbble = "yourhandle"
+  behance = "yourhandle"
+
+  # Creator support
+  patreon = "yourhandle"
+  kofi = "yourhandle"
+  buymeacoffee = "yourhandle"
+
+  # Music/Audio
+  spotify = "https://open.spotify.com/user/yourhandle"  # Full URL
+  soundcloud = "yourhandle"
+  bandcamp = "yourhandle"
+
+  # Other
+  pinterest = "yourhandle"
 
   # Homepage
   homeIntro = "Welcome to **Devtronic** — a minimal, developer-focused theme with Matrix-inspired aesthetics."
