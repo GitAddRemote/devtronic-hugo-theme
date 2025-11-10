@@ -21,7 +21,7 @@
   {{- end -}}
 
   {{- /* Social Links */ -}}
-  {{- if or .Site.Params.github .Site.Params.twitter .Site.Params.linkedin .Site.Params.email .Site.Params.youtube .Site.Params.mastodon .Site.Params.medium .Site.Params.devto .Site.Params.bluesky .Site.Params.tiktok .Site.Params.instagram .Site.Params.facebook .Site.Params.reddit .Site.Params.twitch .Site.Params.stackoverflow .Site.Params.codepen -}}
+  {{- if or .Site.Params.github .Site.Params.twitter .Site.Params.linkedin .Site.Params.email .Site.Params.youtube .Site.Params.mastodon .Site.Params.medium .Site.Params.devto .Site.Params.bluesky .Site.Params.tiktok .Site.Params.instagram .Site.Params.facebook .Site.Params.reddit .Site.Params.twitch .Site.Params.stackoverflow .Site.Params.codepen .Site.Params.discord .Site.Params.telegram .Site.Params.gitlab .Site.Params.bitbucket .Site.Params.dribbble .Site.Params.behance .Site.Params.patreon .Site.Params.kofi .Site.Params.buymeacoffee .Site.Params.spotify .Site.Params.soundcloud .Site.Params.bandcamp .Site.Params.threads .Site.Params.pinterest .Site.Params.matrix .Site.Params.snapchat .Site.Params.whatsapp -}}
     <div class="social-links" role="navigation" aria-label="Social media links">
       {{- if .Site.Params.github -}}
         <a href="https://github.com/{{ .Site.Params.github }}"
@@ -232,6 +232,236 @@
             <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
             <polyline points="2 15.5 12 8.5 22 15.5"></polyline>
             <line x1="12" y1="2" x2="12" y2="8.5"></line>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.discord -}}
+        <a href="{{ .Site.Params.discord }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Discord Server"
+           title="Discord">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.865-.608 1.249a18.271 18.271 0 0 0-5.487 0 12.644 12.644 0 0 0-.617-1.249.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.028C.533 9.046-.32 13.58.099 18.058a.082.082 0 0 0 .031.056 19.9 19.9 0 0 0 5.993 3.029.078.078 0 0 0 .084-.028c.462-.63.873-1.295 1.226-1.994a.076.076 0 0 0-.042-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .078-.011c3.927 1.793 8.18 1.793 12.061 0a.074.074 0 0 1 .079.01c.12.098.246.196.373.293a.077.077 0 0 1-.006.128 12.299 12.299 0 0 1-1.873.891.077.077 0 0 0-.041.107c.36.698.772 1.363 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.029.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.telegram -}}
+        <a href="https://t.me/{{ .Site.Params.telegram }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Telegram"
+           title="Telegram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.gitlab -}}
+        <a href="https://gitlab.com/{{ .Site.Params.gitlab }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="GitLab Profile"
+           title="GitLab">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22.65 14.39L12 22.13 1.35 14.39a.84.84 0 0 1-.3-.94l1.22-3.78 2.44-7.51A.42.42 0 0 1 4.82 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.16l2.44 7.49h8.1l2.44-7.51A.42.42 0 0 1 18.6 2a.43.43 0 0 1 .58 0 .42.42 0 0 1 .11.16l2.44 7.51L23 13.45a.84.84 0 0 1-.35.94z"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.bitbucket -}}
+        <a href="https://bitbucket.org/{{ .Site.Params.bitbucket }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Bitbucket Profile"
+           title="Bitbucket">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 2l1.5 18L12 22l8.5-2L22 2H2zm3.3 3h13.4l-.9 11.1L12 18l-5.8-1.9L5.3 5z"></path>
+            <path d="M8.5 10.5h7l-.5 5.5L12 17l-3-1-.2-2.5"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.dribbble -}}
+        <a href="https://dribbble.com/{{ .Site.Params.dribbble }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Dribbble Profile"
+           title="Dribbble">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.51m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.behance -}}
+        <a href="https://behance.net/{{ .Site.Params.behance }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Behance Profile"
+           title="Behance">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 8h6a3 3 0 0 1 0 6H6v3H3V8zm6 3a1.5 1.5 0 1 0 0-3H6v3h3z"></path>
+            <path d="M14 6h7M17.5 9a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9zm0 2.5a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2z"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.patreon -}}
+        <a href="https://patreon.com/{{ .Site.Params.patreon }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Patreon"
+           title="Patreon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="15" cy="9" r="6"></circle>
+            <rect x="3" y="3" width="6" height="18"></rect>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.kofi -}}
+        <a href="https://ko-fi.com/{{ .Site.Params.kofi }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Ko-fi"
+           title="Ko-fi">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.buymeacoffee -}}
+        <a href="https://buymeacoffee.com/{{ .Site.Params.buymeacoffee }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Buy Me a Coffee"
+           title="Buy Me a Coffee">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+            <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            <line x1="6" y1="1" x2="6" y2="4"></line>
+            <line x1="10" y1="1" x2="10" y2="4"></line>
+            <line x1="14" y1="1" x2="14" y2="4"></line>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.spotify -}}
+        <a href="{{ .Site.Params.spotify }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Spotify"
+           title="Spotify">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 14.5c2-.5 4-.5 6 0m-7-3c3-1 6-1 9 0m-8-3c3.5-1.5 7-1.5 10.5 0"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.soundcloud -}}
+        <a href="https://soundcloud.com/{{ .Site.Params.soundcloud }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="SoundCloud"
+           title="SoundCloud">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2 15v-3m2 4v-5m2 6V11m2 7V10m2 8V9m2 9V8m2 9V8m3 7.5V10a5 5 0 0 1 3 4.5"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.bandcamp -}}
+        <a href="https://{{ .Site.Params.bandcamp }}.bandcamp.com"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Bandcamp"
+           title="Bandcamp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="2 7 10 7 14 17 22 17 18 7 22 7 22 17 2 17 2 7"></polygon>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.threads -}}
+        <a href="https://threads.net/@{{ .Site.Params.threads }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Threads Profile"
+           title="Threads">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 4c1.5 0 2.8.5 3.8 1.4M8.2 7.4C9.2 6.5 10.5 6 12 6m-3.8 7.6c0 2.1 1.7 3.8 3.8 3.8s3.8-1.7 3.8-3.8"></path>
+            <ellipse cx="12" cy="12" rx="7" ry="3"></ellipse>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.pinterest -}}
+        <a href="https://pinterest.com/{{ .Site.Params.pinterest }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Pinterest Profile"
+           title="Pinterest">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M8 16c.5-2 1.5-4 3-5 1-.6 2-.5 2.5.5.3.6.2 1.5-.5 2.5-1 1.5-2.5 2-3.5 2-.5 0-1-.2-1.5-.5M12 7c2 0 3.5 1.5 3.5 3.5S14 14 12 14"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.matrix -}}
+        <a href="{{ .Site.Params.matrix }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Matrix"
+           title="Matrix">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 3v18M21 3v18M3 3h2m14 0h2M3 21h2m14 0h2"></path>
+            <rect x="7" y="7" width="2" height="2"></rect>
+            <rect x="11" y="7" width="2" height="2"></rect>
+            <rect x="15" y="7" width="2" height="2"></rect>
+            <rect x="7" y="11" width="2" height="2"></rect>
+            <rect x="11" y="11" width="2" height="2"></rect>
+            <rect x="15" y="11" width="2" height="2"></rect>
+            <rect x="7" y="15" width="2" height="2"></rect>
+            <rect x="11" y="15" width="2" height="2"></rect>
+            <rect x="15" y="15" width="2" height="2"></rect>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.snapchat -}}
+        <a href="https://snapchat.com/add/{{ .Site.Params.snapchat }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Snapchat"
+           title="Snapchat">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2C8.5 2 6 4.5 6 8c0 2 0 4-1.5 5.5-.5.5-.5 1 0 1.5.8.8 2.5.8 3.5 1 .3.1.5.3.5.6 0 .5.5 1.4 1.5 1.4s1.5-.9 1.5-1.4c0-.3.2-.5.5-.6 1-.2 2.7-.2 3.5-1 .5-.5.5-1 0-1.5C14 12 14 10 14 8c0-3.5-2.5-6-6-6"></path>
+            <path d="M18 18c-.5.5-1.5 1-2.5 1s-2-.5-2.5-1"></path>
+          </svg>
+        </a>
+      {{- end -}}
+
+      {{- if .Site.Params.whatsapp -}}
+        <a href="https://wa.me/{{ .Site.Params.whatsapp }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="WhatsApp"
+           title="WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
           </svg>
         </a>
       {{- end -}}
