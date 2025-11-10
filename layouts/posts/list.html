@@ -7,7 +7,8 @@
 </header>
 
 {{- if .Pages -}}
-  {{- $paginator := .Paginate .Pages 15 -}}
+  {{- $postsPerPage := default 15 .Site.Params.archivePostsPerPage -}}
+  {{- $paginator := .Paginate .Pages $postsPerPage -}}
   <ul class="post-list post-list-condensed">
     {{- range $paginator.Pages -}}
       <li class="post-list-item post-list-item-condensed">
