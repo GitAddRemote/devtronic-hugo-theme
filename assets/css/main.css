@@ -605,6 +605,63 @@ article header {
   margin-bottom: var(--space-md);
 }
 
+/* ============================================
+   Condensed Post List Style
+   ============================================ */
+.post-list-condensed {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.post-list-item-condensed {
+  background: rgba(45, 50, 56, 0.4);
+  border: 1px solid rgba(0, 255, 153, 0.1);
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  margin-bottom: var(--space-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.post-list-item-condensed:hover {
+  transform: translateX(4px);
+  border-color: rgba(0, 255, 153, 0.3);
+  background: rgba(45, 50, 56, 0.6);
+}
+
+.post-list-item-condensed:last-child {
+  margin-bottom: var(--space-xl);
+}
+
+.post-condensed-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.post-list-item-condensed .post-list-title {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  flex: 1;
+  min-width: 200px;
+}
+
+.post-list-item-condensed .post-meta {
+  gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.post-list-item-condensed .post-summary {
+  margin-top: var(--space-sm);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
 .read-more {
   display: inline-flex;
   align-items: center;
