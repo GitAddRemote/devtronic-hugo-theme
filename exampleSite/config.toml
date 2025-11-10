@@ -101,25 +101,36 @@ paginate = 10
       unsafe = true  # Allow HTML in markdown
 
 # Menu configuration
-[[menu.main]]
+[menus]
+[[menus.main]]
+  identifier = "home"
   name = "Home"
   url = "/"
   weight = 1
 
-[[menu.main]]
-  name = "Posts"
-  url = "/posts/"
-  weight = 2
-
-[[menu.main]]
+[[menus.main]]
+  identifier = "about"
   name = "About"
   url = "/about/"
+  weight = 2
+
+[[menus.main]]
+  identifier = "blog"
+  name = "Blog"
+  url = "/posts/"
   weight = 3
 
-[[menu.main]]
-  name = "Tags"
-  url = "/tags/"
+[[menus.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
   weight = 4
+
+[[menus.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 5
 
 # Taxonomies
 [taxonomies]
