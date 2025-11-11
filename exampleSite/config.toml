@@ -77,7 +77,7 @@ paginate = 10
   homeIntro = "Welcome to **Devtronic** — a minimal, developer-focused theme with Matrix-inspired aesthetics."
 
   # Main sections to display on homepage
-  mainSections = ["post", "blog"]
+  mainSections = ["posts", "blog"]
 
   # Pagination settings
   homePostsPerPage = 5        # Number of posts on homepage
@@ -121,7 +121,7 @@ paginate = 10
 [[menus.main]]
   identifier = "blog"
   name = "Blog"
-  url = "/post/"
+  url = "/posts/"
   weight = 3
 
 [[menus.main]]
