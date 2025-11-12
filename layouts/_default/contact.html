@@ -8,7 +8,43 @@
     {{ .Content }}
   </div>
 
-  <div class="contact-form-container">
+  <div class="contact-options">
+    {{- if .Site.Params.linkedin -}}
+    <div class="contact-option">
+      <h3>💼 Professional Opportunities</h3>
+      <p>
+        Connect with me on <strong><a href="https://linkedin.com/in/{{ .Site.Params.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a></strong>
+        for job opportunities, collaborations, or professional networking.
+      </p>
+    </div>
+    {{- end -}}
+
+    {{- if .Site.Params.github -}}
+    <div class="contact-option">
+      <h3>💻 Code & Technical Discussions</h3>
+      <p>
+        Find me on <strong><a href="https://github.com/{{ .Site.Params.github }}" target="_blank" rel="noopener noreferrer">GitHub</a></strong>
+        for code-related questions, issues, pull requests, or technical discussions about my projects.
+      </p>
+    </div>
+    {{- end -}}
+
+    {{- if .Site.Params.bluesky -}}
+    <div class="contact-option">
+      <h3>💬 Everything Else</h3>
+      <p>
+        Follow and message me on <strong><a href="https://bsky.app/profile/{{ .Site.Params.bluesky }}" target="_blank" rel="noopener noreferrer">Bluesky</a></strong>
+        for general questions, feedback, or just to say hi.
+      </p>
+    </div>
+    {{- end -}}
+
+    <hr style="margin-top: 2rem; margin-bottom: 1rem;">
+    <p style="text-align: center; color: var(--text-secondary);">Looking forward to connecting with you!</p>
+  </div>
+
+  <!-- Contact form kept below for users who want to enable it -->
+  <div class="contact-form-container" style="display: none;">
     <form
       id="contact-form"
       class="contact-form"
@@ -179,8 +215,77 @@
 
 <style>
 /* ============================================
-   Contact Form Styles - Devtronic Matrix Theme
+   Contact Page Styles - Devtronic Matrix Theme
    ============================================ */
+
+/* Social contact options */
+.contact-options {
+  margin-top: 2.5rem;
+}
+
+.contact-option {
+  background: rgba(45, 50, 56, 0.6);
+  border: 1px solid rgba(0, 255, 153, 0.15);
+  border-radius: 12px;
+  padding: 1.75rem 2rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--accent-primary),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contact-option:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-primary);
+  box-shadow: 0 8px 32px rgba(0, 255, 153, 0.15);
+  background: rgba(45, 50, 56, 0.8);
+}
+
+.contact-option:hover::before {
+  opacity: 1;
+}
+
+.contact-option h3 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+.contact-option p {
+  margin-bottom: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.contact-option a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-option a:hover {
+  color: var(--accent-glow);
+  text-decoration: underline;
+}
+
+/* Contact form styles (for users who enable it) */
 .contact-form-container {
   margin-top: 3rem;
 }

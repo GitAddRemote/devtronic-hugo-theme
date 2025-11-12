@@ -117,19 +117,20 @@ Icons will automatically appear in the sidebar for any configured social links. 
 
 ### Contact Page
 
-The theme includes a simple, social-first contact page that directs visitors to connect via your preferred platforms. This approach:
+The theme includes a simple, social-first contact page that automatically pulls your social links from `config.toml`. This approach:
 
 - ✅ **Zero privacy concerns** - No third-party form services or data collection
 - ✅ **No maintenance** - Leverage platforms you already use
 - ✅ **Professional** - Direct visitors to the right channel for their needs
 - ✅ **Common pattern** - Used by most successful developer bloggers
+- ✅ **DRY principle** - Configure once in config.toml, used everywhere
 
-The example contact page (`exampleSite/content/contact.md`) demonstrates a clean approach:
-- **LinkedIn** for professional opportunities and networking
-- **GitHub** for code discussions and technical questions
-- **Bluesky/Twitter** for general conversation and feedback
+The contact page (`exampleSite/content/contact.md`) automatically displays links based on your social configuration:
+- **LinkedIn** (`linkedin` param) - for professional opportunities and networking
+- **GitHub** (`github` param) - for code discussions and technical questions
+- **Bluesky** (`bluesky` param) - for general conversation and feedback
 
-Simply update the links in `content/contact.md` to point to your actual social profiles.
+Simply configure your social handles in `config.toml` under `[params]` and the contact page will display them automatically with beautiful Matrix-themed styling.
 
 **Want a contact form instead?**
 
