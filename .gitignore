@@ -22,3 +22,6 @@ pnpm-debug.log*
 # Deployment / build cache
 .cache/
 .env
+
+# ExampleSite theme symlink (development only)
+exampleSite/themes/
