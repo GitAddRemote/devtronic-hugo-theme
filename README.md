@@ -115,49 +115,28 @@ The theme supports an extensive range of social media and professional platforms
 
 Icons will automatically appear in the sidebar for any configured social links. All icons follow accessible design patterns with proper ARIA labels and semantic markup.
 
-### Contact Form Setup
+### Contact Page
 
-The theme includes a secure, spam-free contact form powered by [Basin](https://usebasin.com) that doesn't expose your email address publicly.
+The theme includes a simple, social-first contact page that directs visitors to connect via your preferred platforms. This approach:
 
-**Setup Instructions:**
+- ✅ **Zero privacy concerns** - No third-party form services or data collection
+- ✅ **No maintenance** - Leverage platforms you already use
+- ✅ **Professional** - Direct visitors to the right channel for their needs
+- ✅ **Common pattern** - Used by most successful developer bloggers
 
-1. **Sign up for Basin** (free tier includes 100 submissions/month)
-   - Go to [https://usebasin.com](https://usebasin.com)
-   - Create a free account
+The example contact page (`exampleSite/content/contact.md`) demonstrates a clean approach:
+- **LinkedIn** for professional opportunities and networking
+- **GitHub** for code discussions and technical questions
+- **Bluesky/Twitter** for general conversation and feedback
 
-2. **Create a new form**
-   - Click "Create Form" in your Basin dashboard
-   - Give it a name (e.g., "Website Contact Form")
-   - Copy your form endpoint URL (looks like `https://usebasin.com/f/XXXXXXXXXX`)
+Simply update the links in `content/contact.md` to point to your actual social profiles.
 
-3. **Configure your Hugo site**
-   - Open `config.toml`
-   - Find the `basinFormEndpoint` parameter under `[params]`
-   - Replace `YOUR_FORM_ID` with your actual Basin form endpoint:
-   ```toml
-   [params]
-     basinFormEndpoint = "https://usebasin.com/f/XXXXXXXXXX"
-   ```
+**Want a contact form instead?**
 
-4. **Customize email notifications** (optional)
-   - In Basin dashboard, configure where form submissions should be sent
-   - Set up custom email templates
-   - Configure spam filtering rules
+The theme also includes a ready-to-use contact form layout (`layouts/_default/contact.html`) that can be integrated with form backend services like:
+- Basin (https://usebasin.com) - 100 submissions/month free
+- Formspree (https://formspree.io) - 50 submissions/month free
+- Netlify Forms (if hosting on Netlify) - 100 submissions/month free
+- Getform (https://getform.io) - 50 submissions/month free
 
-**Features:**
-- ✅ **Spam Protection**: Honeypot field catches bots automatically
-- ✅ **Client-side Validation**: Real-time feedback for users
-- ✅ **Accessible**: WCAG AA compliant with ARIA labels
-- ✅ **Matrix-themed**: Styled to match the Devtronic aesthetic
-- ✅ **No Email Exposure**: Your email stays private
-- ✅ **Mobile Responsive**: Works perfectly on all devices
-
-**Alternative Services:**
-
-If you prefer not to use Basin, the contact form can be easily adapted to work with:
-- Formspree (https://formspree.io)
-- Netlify Forms (if hosting on Netlify)
-- Getform (https://getform.io)
-- Any form backend that accepts standard HTML form submissions
-
-Simply update the `action` attribute in `layouts/_default/contact.html` to point to your preferred service.
+To use the contact form, add `layout: "contact"` to your contact page frontmatter and configure your form backend endpoint.

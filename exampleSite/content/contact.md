@@ -2,21 +2,21 @@
 title: "Contact"
 date: 2024-01-01T00:00:00-05:00
 draft: false
-layout: "contact"
 ---
 
 ## Get In Touch
 
-Have a question, feedback, or just want to say hello? I'd love to hear from you. Fill out the form below and I'll get back to you as soon as possible.
+I'd love to hear from you! Here's the best way to reach me depending on what you're looking for:
 
-### Privacy Notice
+### 💼 Professional Opportunities
+Connect with me on **[LinkedIn](https://linkedin.com/in/yourprofile)** for job opportunities, collaborations, or professional networking.
 
-Your privacy matters. Here's what happens with your information:
+### 💻 Code & Technical Discussions
+Find me on **[GitHub](https://github.com/gitaddremote)** for code-related questions, issues, pull requests, or technical discussions about my projects.
 
-- **Data collected**: Name, email, subject, message, and submission timestamp
-- **Storage**: Securely stored via [Basin](https://usebasin.com) for 30 days, then automatically deleted
-- **Usage**: Only used to respond to your inquiry
-- **Sharing**: Never shared, sold, or used for marketing
-- **Your rights**: You'll receive a confirmation email with a link to request data deletion at any time
+### 💬 Everything Else
+Follow and message me on **[Bluesky](https://bsky.app/profile/yourhandle.bsky.social)** for general questions, feedback, or just to say hi.
 
-This form uses Basin for secure, spam-free submission handling without exposing email addresses publicly.
+---
+
+Looking forward to connecting with you!
