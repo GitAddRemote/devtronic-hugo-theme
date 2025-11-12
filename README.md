@@ -114,3 +114,30 @@ The theme supports an extensive range of social media and professional platforms
 | **Other** | Pinterest |
 
 Icons will automatically appear in the sidebar for any configured social links. All icons follow accessible design patterns with proper ARIA labels and semantic markup.
+
+### Contact Page
+
+The theme includes a simple, social-first contact page that automatically pulls your social links from `config.toml`. This approach:
+
+- ✅ **Zero privacy concerns** - No third-party form services or data collection
+- ✅ **No maintenance** - Leverage platforms you already use
+- ✅ **Professional** - Direct visitors to the right channel for their needs
+- ✅ **Common pattern** - Used by most successful developer bloggers
+- ✅ **DRY principle** - Configure once in config.toml, used everywhere
+
+The contact page (`exampleSite/content/contact.md`) automatically displays links based on your social configuration:
+- **LinkedIn** (`linkedin` param) - for professional opportunities and networking
+- **GitHub** (`github` param) - for code discussions and technical questions
+- **Bluesky** (`bluesky` param) - for general conversation and feedback
+
+Simply configure your social handles in `config.toml` under `[params]` and the contact page will display them automatically with beautiful Matrix-themed styling.
+
+**Want a contact form instead?**
+
+The theme also includes a ready-to-use contact form layout (`layouts/_default/contact.html`) that can be integrated with form backend services like:
+- Basin (https://usebasin.com) - 100 submissions/month free
+- Formspree (https://formspree.io) - 50 submissions/month free
+- Netlify Forms (if hosting on Netlify) - 100 submissions/month free
+- Getform (https://getform.io) - 50 submissions/month free
+
+To use the contact form, add `layout: "contact"` to your contact page frontmatter and configure your form backend endpoint.
