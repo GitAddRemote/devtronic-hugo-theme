@@ -73,6 +73,10 @@ paginate = 10
   # Other
   pinterest = "yourhandle"
 
+  # Contact form (Basin)
+  # Sign up at https://usebasin.com and replace with your form endpoint
+  basinFormEndpoint = "https://usebasin.com/f/YOUR_FORM_ID"
+
   # Homepage
   homeIntro = "Welcome to **Devtronic** — a minimal, developer-focused theme with Matrix-inspired aesthetics."
 
@@ -120,6 +124,11 @@ paginate = 10
   name = "Tags"
   url = "/tags/"
   weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 5
 
 # Taxonomies
 [taxonomies]
