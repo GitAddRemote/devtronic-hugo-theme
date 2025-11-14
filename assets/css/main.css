@@ -93,6 +93,7 @@ body {
   background-color: var(--bg-primary);
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ============================================
@@ -185,6 +186,7 @@ body::before {
   padding: var(--space-2xl) var(--space-2xl);
   max-width: var(--content-max-width);
   width: 100%;
+  overflow-x: hidden;
 }
 
 /* ============================================
@@ -533,6 +535,7 @@ article header {
 
 .post-meta {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
   font-size: 0.875rem;
   color: var(--text-secondary);
@@ -631,6 +634,8 @@ article header {
 .post-list-title {
   font-size: 1.75rem;
   margin-bottom: var(--space-sm);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .post-list-title a {
@@ -646,6 +651,8 @@ article header {
 .post-summary {
   color: var(--text-secondary);
   margin-bottom: var(--space-md);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .read-more {
@@ -716,6 +723,9 @@ table {
   border-collapse: collapse;
   margin: 1.5em 0;
   font-size: 0.9375rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 thead {
@@ -924,6 +934,14 @@ tbody tr:hover {
   .post-list-title {
     font-size: 1.5rem;
   }
+
+  .post-list-item {
+    padding: var(--space-lg);
+  }
+
+  .post-meta {
+    gap: var(--space-sm);
+  }
 }
 
 @media (max-width: 480px) {
@@ -937,6 +955,26 @@ tbody tr:hover {
 
   .sidebar {
     padding: var(--space-lg) var(--space-md);
+  }
+
+  .post-list-item {
+    padding: var(--space-md);
+  }
+
+  .post-meta {
+    gap: var(--space-xs);
+    font-size: 0.8125rem;
+  }
+
+  .post-list-title {
+    font-size: 1.25rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .post-summary {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
   }
 }
 
