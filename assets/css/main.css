@@ -472,6 +472,49 @@ pre code {
   font-weight: 600;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+  display: none; /* Hidden by default on desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 2rem;
+  height: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+  position: relative;
+}
+
+.hamburger:focus {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 4px;
+}
+
+.hamburger-line {
+  width: 2rem;
+  height: 0.2rem;
+  background: var(--accent-primary);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: relative;
+  transform-origin: center;
+}
+
+/* Hamburger animation when active */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(0.6rem) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-0.6rem) rotate(-45deg);
+}
+
 /* ============================================
    Article/Post Styles
    ============================================ */
@@ -834,6 +877,40 @@ tbody tr:hover {
 
   .main-content {
     padding: var(--space-xl) var(--space-lg);
+  }
+
+  /* Show hamburger button on mobile */
+  .hamburger {
+    display: flex;
+    margin-bottom: var(--space-md);
+  }
+
+  /* Hide navigation menu by default on mobile */
+  .sidebar-nav {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    margin-top: 0;
+  }
+
+  /* Show navigation when active */
+  .sidebar-nav.active {
+    max-height: 500px; /* Adjust based on content */
+    margin-top: var(--space-md);
+  }
+
+  /* Update navigation styles for mobile */
+  .sidebar-nav ul {
+    padding-top: var(--space-sm);
+  }
+
+  .sidebar-nav a {
+    padding: var(--space-md);
+    font-size: 1.1rem;
+  }
+
+  .sidebar-nav a:hover {
+    padding-left: var(--space-md);
   }
 
   h1 { font-size: 2rem; }
