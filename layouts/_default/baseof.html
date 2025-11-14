@@ -21,5 +21,11 @@
       {{- partial "footer.html" . -}}
     </main>
   </div>
+
+  {{- /* JavaScript for hamburger menu */ -}}
+  {{- $menuJS := resources.Get "js/menu.js" -}}
+  {{- if $menuJS -}}
+    <script>{{ $menuJS.Content | safeJS }}</script>
+  {{- end -}}
 </body>
 </html>

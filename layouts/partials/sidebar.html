@@ -470,7 +470,14 @@
 
 {{- /* Navigation Menu */ -}}
 {{- if .Site.Menus.main -}}
-  <nav class="sidebar-nav" role="navigation" aria-label="Main navigation">
+  {{- /* Hamburger Menu Button (visible only on mobile) */ -}}
+  <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-navigation">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+  </button>
+
+  <nav id="main-navigation" class="sidebar-nav" role="navigation" aria-label="Main navigation">
     <ul>
       {{- range .Site.Menus.main -}}
         <li>
